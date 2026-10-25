@@ -16,7 +16,7 @@ phases:
         - pytest --junitxml=reports/results.xml --tb=short  # Generate
   post_build:
      commands:
-        - echo Build completed successfully.
+        - echo build completed successfully.
 
 artifacts:
   files:
@@ -26,4 +26,4 @@ reports:
   pytest_reports:
     files:
      - "reports/results.xml"
-    discard_paths: yes  
+    discard-paths: yes  
