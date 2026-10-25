@@ -1,0 +1,29 @@
+version: 0.2
+
+phases:
+  install:
+     runtime-versions:
+        python: 3.8  # Specify the python verion
+     commands:
+        - echo Installing dependancies...
+        - pip install -r requirements.txt
+  pre_build:
+    commands:
+      - echo start prebuild and end it      
+  Build:
+     commands:         
+        - echo Running unit tests with pytest...
+        - pytest --junitxml=reports/results.xml --tb=short  # Generate
+  post_build:
+     commands:
+        - echo Build completed successfully.
+
+artifacts:
+  files:
+     - "**/*"
+  base-directory: . # specify were artifacts are stored
+reports: 
+  pytest_reports:
+    files:
+      - "reports/results.xml"
+    discard_paths: yes  
