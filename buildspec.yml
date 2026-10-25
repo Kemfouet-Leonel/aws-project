@@ -10,7 +10,7 @@ phases:
   pre_build:
      commands:
         - echo start prebuild and end it      
-  Build:
+  build:
      commands:         
         - echo Running unit tests with pytest...
         - pytest --junitxml=reports/results.xml --tb=short  # Generate
@@ -24,6 +24,6 @@ artifacts:
   base-directory:  # specify were artifacts are stored
 reports: 
   pytest_reports:
-    files:
+    files: 
      - "reports/results.xml"
     discard-paths: yes  
