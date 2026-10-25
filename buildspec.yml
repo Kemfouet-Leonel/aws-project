@@ -8,8 +8,8 @@ phases:
         - echo Installing dependancies...
         - pip install -r requirements.txt
   pre_build:
-    commands:
-      - echo start prebuild and end it      
+     commands:
+        - echo start prebuild and end it      
   Build:
      commands:         
         - echo Running unit tests with pytest...
@@ -21,9 +21,9 @@ phases:
 artifacts:
   files:
      - "**/*"
-  base-directory: . # specify were artifacts are stored
+  base-directory:  # specify were artifacts are stored
 reports: 
   pytest_reports:
     files:
-      - "reports/results.xml"
+     - "reports/results.xml"
     discard_paths: yes  
